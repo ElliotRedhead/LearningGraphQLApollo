@@ -14,7 +14,8 @@
     "sourceType": "module"
   },
   "plugins": [
-    "json-format"
+    "json-format",
+	"eslint-plugin-graphql"
   ],
   "ignorePatterns": [
     "node_modules"

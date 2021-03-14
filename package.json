@@ -7,11 +7,12 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./app/index.js",
+    "start": "nodemon ./server.js",
     "lint": "eslint '**/*.{js,json,ts,jsx,tsx}' --fix"
   },
   "dependencies": {
     "apollo-server": "2.12",
+    "graphql": "^15.5.0",
     "nodemon": "2.0"
   },
   "devDependencies": {
@@ -19,6 +20,8 @@
     "@babel/node": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "eslint": "^7.22.0",
-    "eslint-plugin-json-format": "^2.0.1"
+    "eslint-plugin-graphql": "^4.0.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "graphql-schema-linter": "^2.0.1"
   }
 }
