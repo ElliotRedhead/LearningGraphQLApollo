@@ -1,27 +1,26 @@
 {
-  "name": "LearningGraphQLApollo",
-  "version": "1.0.0",
-  "repository": "https://github.com/ElliotRedhead/LearningGraphQLApollo.git",
-  "license": "MIT",
-  "author": "ElliotRedhead <elliot.redhead@gmail.com>",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon ./server.js",
-    "lint": "eslint '**/*.{js,json,ts,jsx,tsx}' --fix"
-  },
-  "dependencies": {
-    "apollo-server": "2.12",
-    "graphql": "^15.5.0",
-    "nodemon": "2.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/node": "^7.13.10",
-    "@babel/preset-env": "^7.13.10",
-    "eslint": "^7.22.0",
-    "eslint-plugin-graphql": "^4.0.0",
-    "eslint-plugin-json-format": "^2.0.1",
-    "graphql-schema-linter": "^2.0.1"
-  }
+	"name": "LearningGraphQLApollo",
+	"version": "1.0.0",
+	"repository": "https://github.com/ElliotRedhead/LearningGraphQLApollo.git",
+	"license": "MIT",
+	"author": "ElliotRedhead <elliot.redhead@gmail.com>",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon ./server.js",
+		"lint": "eslint '**/*.{js,json,ts,jsx,tsx}' --fix"
+	},
+	"dependencies": {
+		"apollo-server": "2.12",
+		"graphql": "^15.5.0",
+		"nodemon": "2.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.13.10",
+		"@babel/node": "^7.13.10",
+		"@babel/preset-env": "^7.13.10",
+		"eslint": "^7.22.0",
+		"eslint-plugin-graphql": "^4.0.0",
+		"graphql-schema-linter": "^2.0.1"
+	}
 }
