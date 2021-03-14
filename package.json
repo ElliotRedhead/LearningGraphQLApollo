@@ -7,7 +7,7 @@
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"start": "nodemon ./server.js",
+		"start": "nodemon --experimental-json-modules ./server.js",
 		"lint": "eslint '**/*.{js,json,ts,jsx,tsx}' --fix"
 	},
 	"dependencies": {

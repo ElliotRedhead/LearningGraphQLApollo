@@ -1,4 +1,5 @@
 import apollo from "apollo-server";
+import sessions from "./data/sessions.json";
 const { ApolloServer, gql } = apollo;
 
 const typeDefs = gql`
