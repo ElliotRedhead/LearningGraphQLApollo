@@ -1,0 +1,12 @@
+{
+  "name": "LearningGraphQLApollo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ElliotRedhead/LearningGraphQLApollo.git",
+  "author": "ElliotRedhead <elliot.redhead@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "2.12",
+    "nodemon": "2.0"
+  }
+}
