@@ -15,11 +15,17 @@ const typeDefs = gql`
 		room:String,
 		day:String,
 		format:String,
-		track:String,
+		track:String @deprecated(reason: "Too many sessions do not fit into a single track, migrating to tags-based system in the future."),
 		level:String,
 }`;
 
-const server = new ApolloServer({ typeDefs });
+const resolvers = {
+	Query: {
+		sessions: () => sessions
+	}
+};
+
+const server = new ApolloServer({ typeDefs, resolvers });
 
 server
 	.listen({ port: process.env.PORT || 4000 })
