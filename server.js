@@ -4,7 +4,8 @@ import SessionAPI from "./datasources/sessions.js";
 
 const typeDefs = gql`
 	type Query {
-		sessions:[Session]
+		sessions:[Session],
+		sessionById(id:ID): Session
 		}
 	type Session {
 		id: ID!,
@@ -19,15 +20,16 @@ const typeDefs = gql`
 		level:String,
 }`;
 
-const resolvers = {
-	Query: {
-		sessions: (parent, args, { dataSources }, info) => dataSources.SessionAPI.getSessions()
-	}
-};
-
 const dataSources = () => ({
 	sessionAPI: new SessionAPI()
 });
+
+const resolvers = {
+	Query: {
+		sessions: (parent, args, { dataSources }, info) => dataSources.sessionAPI.getSessions(),
+		sessionById: (parent, { id }, { dataSources }, info) => dataSources.sessionAPI.getSessionById(id)
+	}
+};
 
 const server = new ApolloServer({ typeDefs, resolvers, dataSources });
 
