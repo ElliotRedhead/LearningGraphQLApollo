@@ -4,7 +4,18 @@ import SessionAPI from "./datasources/sessions.js";
 
 const typeDefs = gql`
 	type Query {
-		sessions:[Session],
+		sessions(
+			id: ID,
+			title: String,
+			description:String,
+			startsAt:String,
+			endsAt:String,
+			room:String,
+			day:String,
+			format:String,
+			track:String
+			level:String
+		): [Session],
 		sessionById(id:ID): Session
 		}
 	type Session {
@@ -26,7 +37,7 @@ const dataSources = () => ({
 
 const resolvers = {
 	Query: {
-		sessions: (parent, args, { dataSources }, info) => dataSources.sessionAPI.getSessions(),
+		sessions: (parent, args, { dataSources }, info) => dataSources.sessionAPI.getSessions(args),
 		sessionById: (parent, { id }, { dataSources }, info) => dataSources.sessionAPI.getSessionById(id)
 	}
 };

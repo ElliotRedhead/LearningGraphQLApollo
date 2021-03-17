@@ -41,7 +41,6 @@
 		"prefer-const": 1,
 		"prefer-template": 1,
 		"quotes": ["error", "double"],
-		"semi": ["error", "always"],
-		"space-before-function-paren": [1, "always"]
+		"semi": ["error", "always"]
 	}
 }

@@ -3,20 +3,20 @@ import apolloDatasource from "apollo-datasource";
 const { DataSource } = apolloDatasource;import lodash from "lodash";
 const { _ } = lodash;
 
-class SessionAPI extends DataSource{
-	constructor (){
+class SessionAPI extends DataSource {
+	constructor() {
 		super();
 	}
 
-	initialize (config){
+	initialize(config) {
 		
 	}
 
-	getSessions (){
-		return sessions;
+	getSessions(args) {
+		return _.filter(sessions, args);
 	}
 
-	getSessionById (id) {
+	getSessionById(id) {
 		const session = _.filter(sessions, { id: parseInt(id) });
 		return session[0];
 	}
