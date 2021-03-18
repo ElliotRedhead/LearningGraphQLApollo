@@ -1,11 +1,13 @@
 import apollo from "apollo-server";
 const { ApolloServer } = apollo;
 import SessionAPI from "./datasources/sessions.js";
+import SpeakerAPI from "./datasources/speakers.js";
 import typeDefs from "./schema.js";
 import resolvers from "./resolvers.js";
 
 const dataSources = () => ({
-	sessionAPI: new SessionAPI()
+	sessionAPI: new SessionAPI(),
+	speakerAPI: new SpeakerAPI()
 });
 
 const server = new ApolloServer({
