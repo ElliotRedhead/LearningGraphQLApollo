@@ -36,6 +36,7 @@ const typeDefs = gql`
 		format:String,
 		track:String @deprecated(reason: "Too many sessions do not fit into a single track, migrating to tags-based system in the future."),
 		level:String,
+		speakers: [Speaker]
 }`;
 
 export default typeDefs;
