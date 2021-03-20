@@ -9,7 +9,7 @@ const typeDefs = gql`
 			description:String,
 			startsAt:String,
 			endsAt:String,
-			room:String,
+			room:Room,
 			day:String,
 			format:String,
 			track:String
@@ -19,10 +19,18 @@ const typeDefs = gql`
 		speakers: [Speaker]
 		speakerById(id:ID): Speaker
 		}
+
+	enum Room {
+		Europa
+		Sol
+		Saturn
+	}
+
 	type Mutation {
 		toggleFavouriteSession(id: ID): Session
 		addNewSession(session: SessionInput): Session
 	}
+
 	input SessionInput {
 		title: String!,
 		description:String,
@@ -35,12 +43,14 @@ const typeDefs = gql`
 		level:String,
 		favourite: Boolean
 	}
+
 	type Speaker {
 		id:ID!
 		bio: String
 		name: String
 		sessions: [Session]
 	}
+
 	type Session {
 		id: ID!,
 		title: String!,
