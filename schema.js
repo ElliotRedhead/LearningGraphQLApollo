@@ -21,6 +21,19 @@ const typeDefs = gql`
 		}
 	type Mutation {
 		toggleFavouriteSession(id: ID): Session
+		addNewSession(session: SessionInput): Session
+	}
+	input SessionInput {
+		title: String!,
+		description:String,
+		startsAt:String,
+		endsAt:String,
+		room:String,
+		day:String,
+		format:String,
+		track:String @deprecated(reason: "Too many sessions do not fit into a single track, migrating to tags-based system in the future."),
+		level:String,
+		favourite: Boolean
 	}
 	type Speaker {
 		id:ID!
