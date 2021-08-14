@@ -1,4 +1,4 @@
-import apollo from "apollo-server";
+import apollo, { ApolloError } from "apollo-server";
 const { ApolloServer } = apollo;
 import SessionAPI from "./datasources/sessions.js";
 import SpeakerAPI from "./datasources/speakers.js";
@@ -15,7 +15,15 @@ const server = new ApolloServer({
 	resolvers,
 	dataSources,
 	introspection: true,
-	playground: true
+	playground: true,
+	// hide stack trace on errors
+	debug: false,
+	formatError: err => {
+		if (err.extensions.code === "INTERNAL_SERVER_ERROR"){
+			return new ApolloError("Unable to connect to the server.", "ERROR", { token: "uniquetoken" });
+		}
+		return err;
+	}
 });
 
 server

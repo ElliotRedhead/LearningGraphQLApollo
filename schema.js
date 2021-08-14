@@ -15,10 +15,17 @@ const typeDefs = gql`
 			track:String
 			level:String
 		): [Session],
-		sessionById(id:ID): Session
+		sessionById(id:ID): SessionOrError
 		speakers: [Speaker]
 		speakerById(id:ID): Speaker
-		}
+	}
+
+	union SessionOrError = Session | Error
+	type Error {
+		code: String
+		message: String
+		token: String
+	}
 
 	enum Room {
 		Europa
@@ -32,6 +39,9 @@ const typeDefs = gql`
 	}
 
 	input SessionInput {
+		"""
+		Define session input, user cannot choose their own ID (as this should be auto-incremented) but can provide other attributes.
+		"""
 		title: String!,
 		description:String,
 		startsAt:String,
